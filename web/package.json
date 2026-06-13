@@ -1,8 +1,8 @@
 {
-  "name": "helm-chart-docs",
+  "name": "helm-charts-docs",
   "private": true,
   "version": "0.1.0",
-  "description": "Docusaurus site for helm-chart Helm docs (component-chart today, more charts later).",
+  "description": "Docusaurus site for helm-charts Helm docs (component-chart today, more charts later).",
   "packageManager": "pnpm@9.0.0",
   "scripts": {
     "start": "docusaurus start",

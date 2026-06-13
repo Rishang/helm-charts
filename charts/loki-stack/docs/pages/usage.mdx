@@ -36,14 +36,14 @@ These are the upstream charts this umbrella chart depends on (see `helm/loki-sta
 Add the Helm repository:
 
 ```bash
-helm repo add helm-chart https://rishang.github.io/helm-chart/charts
+helm repo add helm-charts https://rishang.github.io/helm-charts/charts
 helm repo update
 ```
 
 Install or upgrade:
 
 ```bash
-helm upgrade --install loki-stack helm-chart/loki-stack --namespace monitoring --create-namespace
+helm upgrade --install loki-stack helm-charts/loki-stack --namespace monitoring --create-namespace
 ```
 
 ### From local path
@@ -77,7 +77,7 @@ kube-prometheus-stack:
 Install or upgrade the chart:
 
 ```bash
-helm upgrade --install loki-stack helm-chart/loki-stack --namespace monitoring --create-namespace --values values.yaml
+helm upgrade --install loki-stack helm-charts/loki-stack --namespace monitoring --create-namespace --values values.yaml
 ```
 
 ## Upgrade Chart
@@ -85,7 +85,7 @@ helm upgrade --install loki-stack helm-chart/loki-stack --namespace monitoring -
 From repository:
 
 ```bash
-helm upgrade loki-stack helm-chart/loki-stack --namespace monitoring --values values.yaml
+helm upgrade loki-stack helm-charts/loki-stack --namespace monitoring --values values.yaml
 ```
 
 ## Delete Chart

@@ -13,7 +13,7 @@ import ArtifactHubBadge from '@site/src/components/ArtifactHubBadge';
 
 Add the Helm repository:
 ```bash
-helm repo add helm-chart https://rishang.github.io/helm-chart/charts
+helm repo add helm-charts https://rishang.github.io/helm-charts/charts
 helm repo update
 ```
 
@@ -33,7 +33,7 @@ service:
 
 Install or upgrade the chart:
 ```bash
-helm upgrade --install my-component helm-chart/component-chart --values values.yaml
+helm upgrade --install my-component helm-charts/component-chart --values values.yaml
 ```
 
 ### From Local Path
@@ -50,7 +50,7 @@ helm upgrade -n my-namespace my-component ./charts/component-chart/
 
 Or from repository:
 ```bash
-helm upgrade my-component helm-chart/component-chart --values values.yaml
+helm upgrade my-component helm-charts/component-chart --values values.yaml
 ```
 
 ## Delete Chart

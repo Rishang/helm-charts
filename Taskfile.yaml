@@ -81,7 +81,7 @@ tasks:
     - mkdir -p web/static/charts
     - echo "Restoring previously published chart packages..."
     - |
-      CHART_REPO_URL="https://rishang.github.io/helm-chart/charts"
+      CHART_REPO_URL="https://rishang.github.io/helm-charts/charts"
       PREVIOUS_INDEX="web/static/charts/index.yaml.previous"
 
       if curl -fsSL "$CHART_REPO_URL/index.yaml" -o "$PREVIOUS_INDEX"; then
@@ -109,7 +109,7 @@ tasks:
       done
     - echo "Updating Helm repository index..."
     - |
-      CHART_REPO_URL="https://rishang.github.io/helm-chart/charts"
+      CHART_REPO_URL="https://rishang.github.io/helm-charts/charts"
       PREVIOUS_INDEX="web/static/charts/index.yaml.previous"
 
       if [ -f "$PREVIOUS_INDEX" ]; then

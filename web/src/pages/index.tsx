@@ -5,10 +5,10 @@ import HomepageFeatures from '../components/HomepageFeatures';
 
 export default function Home(): React.ReactElement {
   return (
-    <Layout title="Docs" description="Helm chart documentation for helm-chart">
+    <Layout title="Docs" description="Helm chart documentation for helm-charts">
       <header className="heroBanner">
         <div className="container">
-          <h1 className="heroTitle">helm-chart</h1>
+          <h1 className="heroTitle">helm-charts</h1>
           <p className="heroSubtitle">
             A docs UI for the Helm charts in this repository. Start with{' '}
             <Link to="/component-chart/introduction">component-chart</Link> or{' '}
