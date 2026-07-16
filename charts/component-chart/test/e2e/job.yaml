@@ -1,0 +1,10 @@
+# Scenario: job set without a schedule -> chart must infer a Job that runs
+# to completion.
+containers:
+  - name: worker
+    image: busybox
+    imageTag: "1.36"
+    command: ["sh", "-c"]
+    args: ["echo 'e2e job ran'; sleep 2"]
+job:
+  backoffLimit: 1

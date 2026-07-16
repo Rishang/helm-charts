@@ -1,0 +1,10 @@
+# Scenario: job.schedule set -> chart must infer a CronJob object.
+containers:
+  - name: worker
+    image: busybox
+    imageTag: "1.36"
+    command: ["sh", "-c"]
+    args: ["echo tick"]
+job:
+  schedule: "*/5 * * * *"
+  backoffLimit: 1
