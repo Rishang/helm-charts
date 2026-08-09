@@ -1,6 +1,6 @@
 # Grafana Observability Stack Helm Chart
 
-[![GitHub Repo](https://img.shields.io/github/stars/Rishang/helm-chart)](https://github.com/Rishang/helm-chart)
+[![GitHub Repo](https://img.shields.io/github/stars/Rishang/helm-charts)](https://github.com/Rishang/helm-charts)
 
 Umbrella Helm chart to deploy and manage observability components such as Grafana, Loki, Tempo, Thanos, and MinIO.
 

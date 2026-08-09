@@ -1,10 +1,10 @@
 # Loki Stack Helm Chart
 
-[![GitHub Repo](https://img.shields.io/github/stars/Rishang/helm-chart)](https://github.com/Rishang/helm-chart)
+[![GitHub Repo](https://img.shields.io/github/stars/Rishang/helm-charts)](https://github.com/Rishang/helm-charts)
 
 Observability stack - Loki for logs, Grafana for visualization, Prometheus for metrics, and Grafana Alloy for log collection (alternative to deprecated Promtail).
 
-DOCS: https://rishang.github.io/helm-chart/loki-stack/introduction
+DOCS: https://rishang.github.io/helm-charts/loki-stack/introduction
 
 ## Overview
 
@@ -27,7 +27,7 @@ This Helm chart deploys a complete observability stack on Kubernetes, providing:
 ### Add the repository (if applicable)
 
 ```bash
-helm repo add common-charts https://rishang.github.io/helm-chart/charts
+helm repo add common-charts https://rishang.github.io/helm-charts/charts
 helm repo update
 ```
 
@@ -160,6 +160,6 @@ This chart depends on:
 ## Support
 
 For issues and questions:
-- Chart Issues: [GitHub Issues](https://github.com/your-org/helm-chart/issues)
+- Chart Issues: [GitHub Issues](https://github.com/Rishang/helm-charts/issues)
 - Loki Documentation: https://grafana.com/docs/loki/
 - Alloy Documentation: https://grafana.com/docs/alloy/

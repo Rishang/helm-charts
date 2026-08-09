@@ -10,9 +10,9 @@ owners:
 # Optional: Add links to your repository
 links:
   - name: support
-    url: https://github.com/Rishang/helm-chart/issues
+    url: https://github.com/Rishang/helm-charts/issues
   - name: source
-    url: https://github.com/Rishang/helm-chart
+    url: https://github.com/Rishang/helm-charts
 
 # Optional: Add ignore patterns for packages you don't want to publish
 # ignore:
