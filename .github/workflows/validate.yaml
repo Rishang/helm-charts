@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install Task
-        uses: arduino/setup-task@v2
+        uses: arduino/setup-task@v3
         with:
           version: 3.x
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Helm
-        uses: azure/setup-helm@v4
+        uses: azure/setup-helm@v5
         with:
           version: v3.19.0
       - name: Validate Helm charts
@@ -28,3 +28,28 @@ jobs:
           fi
       - name: Run chart unit tests
         run: task helm-unittest
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+      - name: Install Task
+        uses: arduino/setup-task@v3
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Helm
+        uses: azure/setup-helm@v5
+        with:
+          version: v3.19.0
+      - name: Start k3s cluster
+        run: |
+          curl -sfL https://get.k3s.io | sh -s - --disable=traefik --write-kubeconfig-mode=644
+          echo "KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> "$GITHUB_ENV"
+      - name: Wait for node ready
+        run: |
+          timeout 120 bash -c 'until kubectl get nodes --no-headers 2>/dev/null | grep -q " Ready"; do sleep 3; done'
+          kubectl get nodes
+      - name: Run component-chart e2e scenarios
+        run: task helm-e2e

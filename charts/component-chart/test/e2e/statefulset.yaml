@@ -1,0 +1,20 @@
+# Scenario: writable PVC-backed volume -> chart must infer a StatefulSet
+# (and create the volumeClaimTemplate + headless service). Uses the k3s
+# default local-path storageClass.
+replicas: 1
+containers:
+  - name: app
+    image: nginx
+    imageTag: "1.27-alpine"
+    volumeMounts:
+      - containerPath: /usr/share/nginx/html
+        volume:
+          name: data
+          readOnly: false
+    resources:
+      limits:
+        cpu: 100m
+        memory: 64Mi
+volumes:
+  - name: data
+    size: 1Gi

@@ -69,6 +69,11 @@ tasks:
         ) || exit 1
       done
 
+  helm-e2e:
+    desc: Deploy component-chart scenarios to a real cluster (k3s) and assert workloads
+    cmds:
+    - charts/component-chart/test/e2e.sh
+
   helm-package-index:
     desc: Package Helm charts and update repository index
     cmds:
