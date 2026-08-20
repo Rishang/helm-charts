@@ -12,10 +12,10 @@ Usage: {{ include "component.podTemplate" $ }}
 {{- end -}}
 metadata:
   labels:
-    "app.kubernetes.io/name": "devspace-app"
+    "app.kubernetes.io/name": {{ include "component.nameLabel" $ | quote }}
     "app.kubernetes.io/component": {{ $.Release.Name | quote }}
     "app.kubernetes.io/managed-by": {{ $.Release.Service | quote }}
-    {{- range $labelName, $labelValue := $.Values.labels }}
+    {{- range $labelName, $labelValue := omit $.Values.labels "app.kubernetes.io/name" }}
     {{ $labelName | quote }}: {{ $labelValue | quote }}
     {{- end }}
   annotations:

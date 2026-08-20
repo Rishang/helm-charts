@@ -3,4 +3,4 @@ name: component-chart
 description: A general purpose helm chart for deploying components of an application. [DOCS - https://rishang.github.io/helm-charts/component-chart/introduction]
 icon: https://rishang.github.io/helm-charts/img/component-chart-icon.png
 
-version: 0.0.1
+version: 0.0.2

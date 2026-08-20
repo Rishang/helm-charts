@@ -4,9 +4,9 @@ kind: ConfigMap
 metadata:
   name: {{ .Values.configmap.name | default .Release.Name | quote }}
   labels:
-    "app.kubernetes.io/name": {{ .Release.Name | quote }}
+    "app.kubernetes.io/name": {{ include "component.nameLabel" . | quote }}
     "app.kubernetes.io/managed-by": {{ .Release.Service | quote }}
-    {{- range $labelName, $labelValue := .Values.labels }}
+    {{- range $labelName, $labelValue := omit .Values.labels "app.kubernetes.io/name" }}
     {{ $labelName | quote }}: {{ $labelValue | quote }}
     {{- end }}
   annotations:
