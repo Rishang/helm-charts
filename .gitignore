@@ -352,3 +352,4 @@ temp-*
 tmp-*
 tmp/
 temp/
+.pi/tasks/

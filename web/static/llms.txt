@@ -1,0 +1,59 @@
+# helm-charts
+
+> Documentation for Helm charts published by the Rishang/helm-charts repository.
+
+This site documents reusable Helm charts, their values, configuration options, examples, and operational guides. Chart source and documentation are maintained together in the repository.
+
+## Component Chart
+
+- [Introduction](https://rishang.github.io/helm-charts/component-chart/introduction): Overview and purpose of the general-purpose component chart.
+- [Usage](https://rishang.github.io/helm-charts/component-chart/usage): Installation and deployment instructions.
+- [Values Reference](https://rishang.github.io/helm-charts/component-chart/reference): Chart values and defaults.
+- [Examples](https://rishang.github.io/helm-charts/component-chart/examples): Example component deployments.
+
+## Component Chart Configuration
+
+- [Containers](https://rishang.github.io/helm-charts/component-chart/configuration/containers): Container images, commands, environment variables, probes, ports, and resources.
+- [Init Containers](https://rishang.github.io/helm-charts/component-chart/configuration/init-containers): Init container configuration.
+- [Jobs and CronJobs](https://rishang.github.io/helm-charts/component-chart/configuration/job): Job and CronJob configuration.
+- [Services](https://rishang.github.io/helm-charts/component-chart/configuration/service): Internal traffic and Kubernetes Service configuration.
+- [Ingress](https://rishang.github.io/helm-charts/component-chart/configuration/ingress): External traffic and Ingress configuration.
+- [HTTPRoute](https://rishang.github.io/helm-charts/component-chart/configuration/http-route): Gateway API HTTPRoute configuration.
+- [Volumes](https://rishang.github.io/helm-charts/component-chart/configuration/volumes): Persistent and ephemeral storage.
+- [ConfigMaps](https://rishang.github.io/helm-charts/component-chart/configuration/configmap): ConfigMap creation and use.
+- [Secrets](https://rishang.github.io/helm-charts/component-chart/configuration/secrets): Kubernetes Secret configuration.
+- [External Secrets](https://rishang.github.io/helm-charts/component-chart/configuration/external-secrets): External Secrets Operator resources.
+- [Service Accounts](https://rishang.github.io/helm-charts/component-chart/configuration/serviceaccount): ServiceAccount configuration.
+- [Pull Secrets](https://rishang.github.io/helm-charts/component-chart/configuration/pull-secrets): Image pull secret configuration.
+- [Labels](https://rishang.github.io/helm-charts/component-chart/configuration/labels): Workload and Pod labels.
+- [Annotations](https://rishang.github.io/helm-charts/component-chart/configuration/annotations): Workload and Pod annotations.
+- [Pod Spec](https://rishang.github.io/helm-charts/component-chart/configuration/pod-spec): Pod-level Kubernetes settings.
+- [Replicas](https://rishang.github.io/helm-charts/component-chart/configuration/replicas): Replica count configuration.
+- [Autoscaling](https://rishang.github.io/helm-charts/component-chart/configuration/auto-scaling): Horizontal Pod Autoscaler configuration.
+- [Rolling Updates](https://rishang.github.io/helm-charts/component-chart/configuration/rolling-update): Deployment update strategy.
+- [Revision History](https://rishang.github.io/helm-charts/component-chart/configuration/revision-history-limit): Retained workload revisions.
+- [Pod Management Policy](https://rishang.github.io/helm-charts/component-chart/configuration/pod-management-policy): StatefulSet Pod ordering and headless Service name.
+- [Termination Grace Period](https://rishang.github.io/helm-charts/component-chart/configuration/termination-grace-period-seconds): Pod shutdown grace period.
+- [Node Selector](https://rishang.github.io/helm-charts/component-chart/configuration/node-selector): Node selection constraints.
+- [Node Name](https://rishang.github.io/helm-charts/component-chart/configuration/node-name): Direct node assignment.
+- [Affinity](https://rishang.github.io/helm-charts/component-chart/configuration/affinity): Pod and node affinity rules.
+- [Tolerations](https://rishang.github.io/helm-charts/component-chart/configuration/tolerations): Node taint tolerations.
+- [Extra Objects](https://rishang.github.io/helm-charts/component-chart/configuration/extra-objects): Additional Kubernetes manifests.
+
+## Component Chart Guides
+
+- [Ingress and Domains](https://rishang.github.io/helm-charts/component-chart/guides/ingress-domains): Configure domains and ingress routing.
+- [Persistent Volumes](https://rishang.github.io/helm-charts/component-chart/guides/persistent-volumes): Configure persistent application storage.
+- [SSL Certificates](https://rishang.github.io/helm-charts/component-chart/guides/ssl-certificates): Configure TLS certificates.
+
+## Loki Stack
+
+- [Introduction](https://rishang.github.io/helm-charts/loki-stack/introduction): Overview of the Loki stack chart.
+- [Usage](https://rishang.github.io/helm-charts/loki-stack/usage): Installation and deployment instructions.
+- [Values Reference](https://rishang.github.io/helm-charts/loki-stack/reference): Chart values and defaults.
+- [Examples](https://rishang.github.io/helm-charts/loki-stack/examples): Example Loki stack configurations.
+
+## Optional
+
+- [GitHub Repository](https://github.com/Rishang/helm-charts): Helm chart source, documentation source, issues, and releases.
+- [Helm Repository Index](https://rishang.github.io/helm-charts/charts/index.yaml): Machine-readable Helm repository index.
