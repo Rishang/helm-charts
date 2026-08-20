@@ -79,7 +79,7 @@ spec:
       protocol: {{ $portMap.protocol | default "TCP" | quote }}
     {{- end }}
   selector:
-    "app.kubernetes.io/name": "devspace-app"
+    "app.kubernetes.io/name": {{ include "component.nameLabel" $ | quote }}
     "app.kubernetes.io/component": {{ $.Release.Name | quote }}
   type: {{ $.Values.service.type | default "ClusterIP" | quote }}
 {{- end }}

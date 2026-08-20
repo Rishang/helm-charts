@@ -37,6 +37,8 @@ service:
   externalIPs: []
 
 # Labels for the component
+# app.kubernetes.io/name defaults to devspace-app when omitted.
+# Keep app.kubernetes.io/name unchanged when upgrading because workload selectors are immutable.
 labels: {}
 
 # Annotations for the component
