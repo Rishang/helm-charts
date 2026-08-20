@@ -32,7 +32,8 @@ tests:
 
   - it: allows the default name label to be overridden
     set:
-      labels.app\.kubernetes\.io/name: custom-app
+      labels:
+        app.kubernetes.io/name: custom-app
     asserts:
       - equal:
           path: spec.selector["app.kubernetes.io/name"]
