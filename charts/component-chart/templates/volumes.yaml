@@ -17,7 +17,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: {{ $volume.name | quote }}
   labels:
-    "app.kubernetes.io/name": "devspace-app"
+    "app.kubernetes.io/name": {{ include "component.nameLabel" $ | quote }}
     "app.kubernetes.io/component": {{ $.Release.Name | quote }}
     "app.kubernetes.io/managed-by": {{ $.Release.Service | quote }}
     {{- range $labelName, $labelValue := $volume.labels }}

@@ -39,10 +39,10 @@ kind: {{ $kind }}
 metadata:
   name: {{ $.Release.Name | quote }}
   labels:
-    "app.kubernetes.io/name": "devspace-app"
+    "app.kubernetes.io/name": {{ include "component.nameLabel" $ | quote }}
     "app.kubernetes.io/component": {{ $.Release.Name | quote }}
     "app.kubernetes.io/managed-by": {{ $.Release.Service | quote }}
-    {{- range $labelName, $labelValue := $.Values.labels }}
+    {{- range $labelName, $labelValue := omit $.Values.labels "app.kubernetes.io/name" }}
     {{ $labelName | quote }}: {{ $labelValue | quote }}
     {{- end }}
   annotations:
@@ -82,10 +82,10 @@ spec:
   {{- end }}
   selector:
     matchLabels:
-      "app.kubernetes.io/name": "devspace-app"
+      "app.kubernetes.io/name": {{ include "component.nameLabel" $ | quote }}
       "app.kubernetes.io/component": {{ $.Release.Name | quote }}
       "app.kubernetes.io/managed-by": {{ $.Release.Service | quote }}
-      {{- range $labelName, $labelValue := $.Values.labels }}
+      {{- range $labelName, $labelValue := omit $.Values.labels "app.kubernetes.io/name" }}
       {{ $labelName | quote }}: {{ $labelValue | quote }}
       {{- end }}
   template:
@@ -108,7 +108,7 @@ spec:
   - metadata:
       name: {{ $volume.name | quote }}
       labels:
-        "app.kubernetes.io/name": "devspace-app"
+        "app.kubernetes.io/name": {{ include "component.nameLabel" $ | quote }}
         "app.kubernetes.io/component": {{ $.Release.Name | quote }}
         "app.kubernetes.io/managed-by": {{ $.Release.Service | quote }}
         {{- range $labelName, $labelValue := $volume.labels }}
@@ -160,9 +160,9 @@ metadata:
   name: "{{ $.Release.Name }}-headless"
   {{- end }}
   labels:
-    "app.kubernetes.io/name": {{ $.Release.Name | quote }}
+    "app.kubernetes.io/name": {{ include "component.nameLabel" $ | quote }}
     "app.kubernetes.io/managed-by": {{ $.Release.Service | quote }}
-    {{- range $labelName, $labelValue := $.Values.labels }}
+    {{- range $labelName, $labelValue := omit $.Values.labels "app.kubernetes.io/name" }}
     {{ $labelName | quote }}: {{ $labelValue | quote }}
     {{- end }}
   annotations:
@@ -177,10 +177,10 @@ spec:
     name: web
   clusterIP: None
   selector:
-    "app.kubernetes.io/name": "devspace-app"
+    "app.kubernetes.io/name": {{ include "component.nameLabel" $ | quote }}
     "app.kubernetes.io/component": {{ $.Release.Name | quote }}
     "app.kubernetes.io/managed-by": {{ $.Release.Service | quote }}
-    {{- range $labelName, $labelValue := $.Values.labels }}
+    {{- range $labelName, $labelValue := omit $.Values.labels "app.kubernetes.io/name" }}
     {{ $labelName | quote }}: {{ $labelValue | quote }}
     {{- end }}
 ---

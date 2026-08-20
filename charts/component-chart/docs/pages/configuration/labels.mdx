@@ -14,6 +14,15 @@ By default, the component chart sets a couple of labels following the best pract
 - `app.kubernetes.io/component: [DEPLOYMENT_NAME]`
 - `app.kubernetes.io/managed-by: Helm`
 
+The default `app.kubernetes.io/name` label can be overridden through the existing `labels` option:
+
+```yaml
+labels:
+  app.kubernetes.io/name: my-app
+```
+
+When omitted, it defaults to `devspace-app`. Do not change this label while upgrading an existing release because it is used in immutable workload selectors.
+
 :::note
 You can specify additional labels using the `labels` option but the default / best practice labels will still be set for the component.
 :::
